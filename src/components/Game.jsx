@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Board from './Board';
 
-const Game = props => {
+const Game = () => {
   const [history, setHistory] = useState([{squares: Array(9).fill(null)}]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
@@ -39,7 +39,6 @@ const Game = props => {
 
   const status = () => {
     const winner = calculateWinner(current.squares);
-    console.log(winner);
     if (winner) {
       return 'Winner: ' + winner;
     } else {
